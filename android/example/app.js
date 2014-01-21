@@ -1,39 +1,44 @@
 // This is a test harness for your module
-// You should do something interesting in this harness 
-// to test out the module and to provide instructions 
-// to users on how to use it by example.
-
 
 // open a single window
 var win = Ti.UI.createWindow({
-	backgroundColor:'white'
+	title : 'Test Cookie Module'
 });
-var label = Ti.UI.createLabel();
-win.add(label);
 win.open();
 
-// TODO: write your module tests here
-var android = require('com.polancomedia.cookies');
-Ti.API.info("module is => " + android);
+var cookies = require('com.polancomedia.cookies');
 
-label.text = android.example();
+var webview = Ti.UI.createWebView({
+	url : 'http://github.com/adampax'
+});
 
-Ti.API.info("module exampleProp is => " + android.exampleProp);
-android.exampleProp = "This is a test value";
+webview.addEventListener('load', function(e) {
+	var url = e.url;
+	
+	Ti.API.info('fetch cookies for: ' + url);
+	var cookieString = cookies.getCookies(url);
 
-if (Ti.Platform.name == "android") {
-	var proxy = android.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
-	});
+	Ti.API.info('cookieString: ' + cookieString);
 
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	win.add(proxy);
+	parseCookies(cookieString);
+});
+
+win.add(webview);
+
+//example of how to parse the cookie string
+function parseCookies(str) {
+	if (str !== null) {
+
+		var list = str.split("; ");
+		
+		for (var i = 0; i < list.length; i++) {
+			var cookie = list[i];
+			var p = cookie.indexOf("=");
+			
+			var name = cookie.substring(0, p);
+			var value = cookie.substring(p + 1);
+
+			Ti.API.info('name: ' + name + ' value: ' + value);
+		}
+	}
 }
-

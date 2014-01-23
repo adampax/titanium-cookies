@@ -6,7 +6,7 @@ var win = Ti.UI.createWindow({
 });
 win.open();
 
-var cookies = require('com.polancomedia.cookies');
+var monster = require('com.polancomedia.cookies');
 
 var webview = Ti.UI.createWebView({
 	url : 'http://github.com/adampax'
@@ -16,17 +16,17 @@ webview.addEventListener('load', function(e) {
 	var url = e.url;
 	
 	Ti.API.info('fetch cookies for: ' + url);
-	var cookieString = cookies.getCookies(url);
+	var cookieString = monster.getCookie(url);
 
 	Ti.API.info('cookieString: ' + cookieString);
 
-	parseCookies(cookieString);
+	parseCookie(cookieString);
 });
 
 win.add(webview);
 
 //example of how to parse the cookie string
-function parseCookies(str) {
+function parseCookie(str) {
 	if (str !== null) {
 
 		var list = str.split("; ");
@@ -37,8 +37,9 @@ function parseCookies(str) {
 			
 			var name = cookie.substring(0, p);
 			var value = cookie.substring(p + 1);
-
+			
 			Ti.API.info('name: ' + name + ' value: ' + value);
 		}
+		alert('Retrieved ' + list.length + ' name/values');
 	}
 }

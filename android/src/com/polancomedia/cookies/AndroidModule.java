@@ -39,7 +39,7 @@ public class AndroidModule extends KrollModule
 
 	// Methods
 	@Kroll.method
-	public String getCookies(String siteUrl){  
+	public String getCookie(String siteUrl){  
 
 	    CookieManager cookieManager = CookieManager.getInstance();
 	    String cookies = cookieManager.getCookie(siteUrl);       

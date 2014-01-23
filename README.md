@@ -1,5 +1,7 @@
 ## Me want cookies from Titanium Webview. Om nom nom.
 
+[Compiled Module](https://github.com/adampax/titanium-cookies/tree/master/android/dist)
+
 ### Why
 
 Get cookies from webview too hard, [evalJS](https://jira.appcelerator.org/browse/TIMOB-16082) too buggy.

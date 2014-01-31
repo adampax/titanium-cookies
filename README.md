@@ -1,6 +1,9 @@
-## Me want cookies from Titanium Webview. Om nom nom.
+## Titanium Cookies
+### Me want cookies from Titanium Webview. Om nom nom.
 
-[Compiled Module](https://github.com/adampax/titanium-cookies/tree/master/android/dist)
+### Compiled Modules
+* [Android](https://github.com/adampax/titanium-cookies/tree/master/android/dist)
+* [iOS](https://github.com/adampax/titanium-cookies/tree/master/ios/dist)
 
 ### Why
 
@@ -24,16 +27,13 @@ myWebview.addEventListener('load', function(e) {
 function eatCookie(str) {
     if (str !== null) {
 
-        var list = str.split("; ");
-        
-        for (var i = 0; i < list.length; i++) {
-            var cookie = list[i];
-            var p = cookie.indexOf("=");
-            
-            var name = cookie.substring(0, p);
-            var value = cookie.substring(p + 1);
-            
-            Ti.API.info('name: ' + name + ' value: ' + value);
+        var url = e.url;
+
+        Ti.API.info('fetch cookie for: ' + url);
+        var cookies = monster.getCookie(url);
+
+        for(var key in cookies){
+            Ti.API.info('name: ' + key + ' value: ' + cookies[key]);
         }
     }
 }

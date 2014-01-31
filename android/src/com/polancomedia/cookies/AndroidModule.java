@@ -8,6 +8,8 @@
  */
 package com.polancomedia.cookies;
 
+import java.util.HashMap;
+
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiApplication;
@@ -37,15 +39,19 @@ public class AndroidModule extends KrollModule
 		// put module init code that needs to run when the application is created
 	}
 
-	// Methods
+	// Methods	
 	@Kroll.method
-	public String getCookie(String siteUrl){  
+	public HashMap getCookie(String siteUrl){     
+		HashMap<String, String> mMap = new HashMap<String, String>();
 
 	    CookieManager cookieManager = CookieManager.getInstance();
 	    String cookies = cookieManager.getCookie(siteUrl);       
-            
-	    return cookies; 
-	}
-
+	    String[] temp=cookies.split("[;]");
+	    for (String ar1 : temp ){
+	    	String[] temp1=ar1.split("[=]");
+	    	mMap.put(temp1[0], temp1[1]);
+	    }              
+	    return mMap; 
+	}	
 }
 

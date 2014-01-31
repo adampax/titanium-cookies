@@ -1,4 +1,4 @@
-// This is a test harness for your module
+// Android Test Harness
 
 // open a single window
 var win = Ti.UI.createWindow({
@@ -12,34 +12,26 @@ var webview = Ti.UI.createWebView({
 	url : 'http://github.com/adampax'
 });
 
+var monster = require('com.polancomedia.cookies');
+
 webview.addEventListener('load', function(e) {
-	var url = e.url;
-	
-	Ti.API.info('fetch cookies for: ' + url);
-	var cookieString = monster.getCookie(url);
+    var url = e.url;
 
-	Ti.API.info('cookieString: ' + cookieString);
+    Ti.API.info('fetch cookie for: ' + url);
+    var cookies = monster.getCookie(url);
 
-	parseCookie(cookieString);
+    var count = 0;
+    for(var key in cookies){
+        Ti.API.info('name: ' + key + ' value: ' + cookies[key]);
+        count++;
+    }
+
+    if(cookies.logged_in){
+        Ti.API.info('logged_in: ' + cookies.logged_in);
+    }
+
+    alert('Found ' + count + ' name/values');
+
 });
 
 win.add(webview);
-
-//example of how to parse the cookie string
-function parseCookie(str) {
-	if (str !== null) {
-
-		var list = str.split("; ");
-		
-		for (var i = 0; i < list.length; i++) {
-			var cookie = list[i];
-			var p = cookie.indexOf("=");
-			
-			var name = cookie.substring(0, p);
-			var value = cookie.substring(p + 1);
-			
-			Ti.API.info('name: ' + name + ' value: ' + value);
-		}
-		alert('Retrieved ' + list.length + ' name/values');
-	}
-}

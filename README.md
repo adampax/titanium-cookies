@@ -17,26 +17,12 @@ myWebview.addEventListener('load', function(e) {
     var url = e.url;
     
     Ti.API.info('fetch cookie for: ' + url);
-    var cookieString = monster.getCookie(url);
+    var cookies = monster.getCookie(url);
 
-    Ti.API.info('cookieString: ' + cookieString);
-
-    eatCookie(cookieString);
-});
-
-function eatCookie(str) {
-    if (str !== null) {
-
-        var url = e.url;
-
-        Ti.API.info('fetch cookie for: ' + url);
-        var cookies = monster.getCookie(url);
-
-        for(var key in cookies){
-            Ti.API.info('name: ' + key + ' value: ' + cookies[key]);
-        }
+    for(var key in cookies){
+        Ti.API.info('name: ' + key + ' value: ' + cookies[key]);
     }
-}
+});
 
 ```
 

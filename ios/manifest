@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: My module
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+
+# these should not be edited
+name: Cookies
+moduleid: com.polancomedia.cookies
+guid: 2347780e-6904-4ae3-8f58-4c70ce573c42
+platform: iphone
+minsdk: 3.2.0.GA

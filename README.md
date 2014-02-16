@@ -26,7 +26,9 @@ myWebview.addEventListener('load', function(e) {
 
 ```
 
-See full example in the `example` folder.
+See full example in the `example` folder. 
+
+Read more in blog post [here](http://adampaxton.com/get-cookies-from-a-webview-in-titanium.aspx).
 
 ### Methods
 
@@ -42,3 +44,7 @@ See full example in the `example` folder.
 ## License
 MIT License
 Copyright (c) 2014 Polanco Media, LLC
+
+### Credits
+Om Nom Nom
+![Image](http://adampaxton.com/Portals/5/Images/Blog/Work/titanium-cookies-omnomnom.jpg)

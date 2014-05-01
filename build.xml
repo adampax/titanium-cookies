@@ -1,8 +1,12 @@
-<project name="ticookies" default="ios">
+<project name="ticookies" default="both">
     <target name="ios">
         <exec dir="${basedir}/ios" executable="python" failonerror="true">
-            <arg line="build.py out.log"/>
+            <arg line="build.py"/>
         </exec>
     </target>
-	<target name="test" depends="ios"/>
+    <target name="android">
+        <exec dir="${basedir}/android" executable="ant" failonerror="true">
+        </exec>
+    </target>
+	<target name="both" depends="ios, android"/>
 </project>

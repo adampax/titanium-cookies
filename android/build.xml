@@ -1,6 +1,6 @@
 <project name="android" default="dist">
 	<description>
-		Ant build script for Titanium Android module android
+		Ant build script for Titanium Android module test3
 	</description>
 
 	<property name="ti.module.root" location="${basedir}"/>

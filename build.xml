@@ -1,0 +1,8 @@
+<project name="ticookies" default="ios">
+    <target name="ios">
+        <exec dir="${basedir}/ios" executable="python" failonerror="true">
+            <arg line="build.py out.log"/>
+        </exec>
+    </target>
+	<target name="test" depends="ios"/>
+</project>

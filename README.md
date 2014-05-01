@@ -30,6 +30,11 @@ See full example in the `example` folder.
 
 Read more in blog post [here](http://adampaxton.com/get-cookies-from-a-webview-in-titanium.aspx).
 
+
+### Building
+Use gradle both to build ios and android using gradle.
+Use gradle ios or gradle android for specific builds.
+Use ant for both or ant ios or ant android for specific builds.
 ### Methods
 
 #### getCookie(url)

@@ -3,6 +3,7 @@
         <exec dir="${basedir}/ios" executable="python" failonerror="true">
             <arg line="build.py"/>
         </exec>
+        <move file="ios/com.polancomedia.cookies-iphone-0.1.zip" todir="ios/dist"/>
     </target>
     <target name="android">
         <exec dir="${basedir}/android" executable="ant" failonerror="true">

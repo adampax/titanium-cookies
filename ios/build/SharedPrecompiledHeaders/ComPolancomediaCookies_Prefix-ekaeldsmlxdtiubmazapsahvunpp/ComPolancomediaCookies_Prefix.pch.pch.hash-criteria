@@ -1,0 +1,29 @@
+-x
+objective-c
+-arch
+i386
+-std=c99
+-fobjc-arc
+-fpascal-strings
+-Os
+-DTI_VERSION=
+-DNDEBUG
+-isysroot
+/Applications/Xcode90.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk
+-fasm-blocks
+-mios-simulator-version-min=8.0
+-g
+-fobjc-abi-version=2
+-fobjc-legacy-dispatch
+-iquote
+-iquote
+-I/Users/SwanandMarathe/Documents/Appcelerator_Studio_Workspace/cookieMonster/ios/build/Release-iphonesimulator/include
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include/TiCore
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include/JavaScriptCore
+-F/Users/SwanandMarathe/Documents/Appcelerator_Studio_Workspace/cookieMonster/ios/build/Release-iphonesimulator
+-DTI_POST_1_2
+i386-apple-darwin17.7.0
+"4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.37)"
+SDK_PRODUCT_BUILD_VERSION=15A372
+15A372

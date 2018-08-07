@@ -1,13 +1,14 @@
 /**
- * Your Copyright Here
+ * cookieMonster
  *
- * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
- * and licensed under the Apache Public License (version 2)
+ * Created by Your Name
+ * Copyright (c) 2018 Your Company. All rights reserved.
  */
+
 #import "TiModule.h"
 
-@interface ComPolancomediaCookiesModule : TiModule 
-{
+@interface ComPolancomediaCookiesModule : TiModule {
+
 }
 
 @end

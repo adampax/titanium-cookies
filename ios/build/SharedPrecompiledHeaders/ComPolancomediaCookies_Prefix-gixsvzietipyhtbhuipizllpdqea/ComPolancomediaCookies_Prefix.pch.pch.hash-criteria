@@ -1,0 +1,27 @@
+-x
+objective-c
+-arch
+armv7
+-std=c99
+-fobjc-arc
+-fpascal-strings
+-Os
+-DTI_VERSION=
+-DNDEBUG
+-isysroot
+/Applications/Xcode90.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk
+-miphoneos-version-min=8.0
+-g
+-fembed-bitcode
+-iquote
+-iquote
+-I/Users/SwanandMarathe/Documents/Appcelerator_Studio_Workspace/cookieMonster/ios/build/Release-iphoneos/include
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include/TiCore
+-I/Users/SwanandMarathe/Library/Application Support/Titanium/mobilesdk/osx/7.0.1.GA/iphone/include/JavaScriptCore
+-F/Users/SwanandMarathe/Documents/Appcelerator_Studio_Workspace/cookieMonster/ios/build/Release-iphoneos
+-DTI_POST_1_2
+arm-apple-darwin17.7.0
+
+SDK_PRODUCT_BUILD_VERSION=15A372
+15A372
